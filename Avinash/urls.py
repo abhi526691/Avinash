@@ -15,9 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from avi.views import index
+from avi.views import index, finance, medical, loan
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index, name='index')
+    path('', index, name='index'),
+    path('finance/', finance, name='finance'),
+    path('medical/', medical, name='medical'),
+    path('loan/', loan, name='loan')
 ]
