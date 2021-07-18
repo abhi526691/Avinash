@@ -2,10 +2,43 @@
 
 {% block content %}
 
-<div class="container-fluid">
 
-{% for i in li %}
-<li>{{i}}</li>
-{% endfor %}
-</div>
+
+    <div class="row">
+        <div class="column">
+            <h1 style="padding-left:20px;">Insurance</h1>
+        </div>
+        <div class="column">
+            <h1 style="padding-left: 200px;">Finance</h1>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="column">
+            {% for i in li %}
+                <li>{{i}}</li>
+            {% endfor %}
+        </div>
+        <div class="column">
+            {% for i in value %}
+            {{i}}
+            <br>
+            {% endfor %}
+        </div>
+
+        <div class="column" style="padding-left: 100px;">
+            {% for i in financeQuery %}
+                <li>{{i}}</li>
+            {% endfor %}
+        </div>
+        <div class="column">
+            {% for i in financeValue %}
+            {{i}}
+            <br>
+            {% endfor %}
+        </div>
+    </div>
+
+
+
 {% endblock content %}
