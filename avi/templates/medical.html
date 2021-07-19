@@ -1,44 +1,61 @@
 {% extends 'navbar.html' %}
 
 {% block content %}
-
-
-
-
     <div class="row">
         <div class="column">
-            <h1 style="padding-left: 20px;">Medical</h1>
+            <h1 style="padding-left:30px;">Medical</h1>
         </div>
         <div class="column">
-            <h1 style="padding-left: 200px;">Loan</h1>
+            <h1 style="padding-left: 500px;">Loan</h1>
         </div>
     </div>
-    
-    <div class="row">
-        <div class="column">
-            {% for i in li %}
-                <li>{{i}}</li>
-            {% endfor %}
-        </div>
-        <div class="column">
-            {% for i in value %}
-            {{i}}
-            <br>
-            {% endfor %}
-        </div>
 
-        <div class="column" style="padding-left: 30px;">
-            {% for i in loanQuery %}
-                <li>{{i}}</li>
-            {% endfor %}
-        </div>
-        <div class="column">
-            {% for i in loanValue %}
-            {{i}}
-            <br>
-            {% endfor %}
-        </div>
+    <div class="row">
+{% if li|length == 0 %}
+<div class="column">
+    <h3 style="padding-left: 20px">There is no Medical data to Show </h3>
     </div>
+
+{% else %}
+
+    <div class="column">
+        {% for i in li %}
+            <li>{{i}}</li>
+        {% endfor %}
+    </div>
+    <div class="column">
+        {% for i in value %}
+        {{i}}
+        <br>
+        {% endfor %}
+    </div>
+
+{% endif %}
+
+
+{% if loanQuery|length == 0 %}
+<div class="column">
+    <h3 style="padding-left: 300px;"> There is no Loan data to show </h3>
+</div>
+
+{% else %}
+<div class="column" style="padding-left: 300px;">
+    {% for i in loanQuery %}
+        <li>{{i}}</li>
+    {% endfor %}
+</div>
+<div class="column">
+    {% for i in loanValue %}
+    {{i}}
+    <br>
+    {% endfor %}
+</div>
+
+{% endif %}
+
+
+</div>
+
 
 
 {% endblock content %}
